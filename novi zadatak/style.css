@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Lora", serif;
+  line-height: 1.5;
+  color: #333;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.container-nav{
+  width: 100%;
+  height: 100vh;
+  padding: 0 7%;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.logo{
+  left: 10%;
+}
+.navbar ul{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  left: 30%;
+  
+}
+.navbar ul li a{
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 40px;
+}
+.menu-btn{
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height:1.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.menu-btn__lines,
+.menu-btn__lines::before,
+.menu-btn__lines::after{
+  width: 1.5rem;
+  height: 0.1rem;
+  background-color: #000;
+  transition:  all 0.5s ease-in-out;
+}
+.menu-btn__lines::before,
+.menu-btn__lines::after{
+  content: "";
+  position: absolute;
+}
+.menu-btn__lines::before{
+  transform: translateY(-0.5rem);
+}
+.menu-btn__lines::after{
+  transform: translateY(0.5rem);
+}
+.menu-btn.open .menu-btn__lines{
+  transform: translateX(2rem);
+  background: transparent;
+}
+.menu-btn.open .menu-btn__lines::before{
+  transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+}
+.menu-btn.open .menu-btn__lines::after{
+  transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+
+}
+.navbar .search{
+  left: 80%;
+}
+img {
+    max-width: 100%;
+    
+}
+section{
+  position: relative;
+  top: 80px;
+}
+.container-d {
+  position: relative;
+  height: 350px;
+  background-color: #f5f5f5;
+  
+}
+.container-d img {
+  position: relative;
+  top: 50%;
+  right: 75%;
+  left: 5%;
+  color: #fff;
+  margin-left: 20px;
+}
+.container-d p {
+  position: relative;
+  top: 60%;
+  left: 15%;
+  right: 60%;
+  font-size: 12px;
+  line-height: 27px;
+  font-family: "Lora", serif;
+}
+#levo{
+  display: block;
+  visibility: hidden;
+}
+#desno{
+  display: block;
+  visibility: hidden;
+}
+.hide {
+  display: none;
+}
+
+.akcija-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.akcija {
+    /* display: none; */
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  padding: 24px;
+}
+
+.akcija img {
+  width: 40px;
+}
+
+.akcija h4 {
+  margin: 0;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.active {
+    /* display: block; */
+  background-color: #303030;
+  color: #fff;
+  font-style: italic;
+  transform: scale(1.4);
+  transition: all 300ms;
+  z-index: 1;
+}
+
+@media (max-width: 750px){
+        .menu-btn{
+          display: flex;
+        }
+        
+        .menu-items{
+          flex-direction: column;
+          justify-content: space-around;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          height: 100vh;
+          background-color: #fff;
+          transform: translateX(100vw);
+          
+  
+        }
+        .menu-items.open{
+          transform: translateX(0);
+        }
+        .menu-items li{
+          width: 100vw;
+          height: 100vw;
+        }
+        .menu-items  li a{
+             font-size: 5vh;
+             display: flex;
+             justify-content: center ;
+             align-items: center;
+             width: 100%;
+             height:100%;
+        }
+        .akcija{
+            display: none;
+        }
+        .active{
+            display: block;
+        }
+       #levo{
+         display: block;
+         visibility: visible;
+       }
+       #desno{
+         display: block;
+         visibility: visible;
+       }
+       .akcije{
+         background-color: #f5f5f5;
+         padding-top: 1%;
+       }
+        .akcije p{
+            width: 50%;
+        }
+}
